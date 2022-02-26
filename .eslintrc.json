@@ -19,7 +19,8 @@
         "indent": 0,
         "import/extensions": ["error", "never"],
         "linebreak-style": "off",
-        "react/jsx-indent": "off"
+        "react/jsx-indent": "off",
+        "react/react-in-jsx-scope": "off"
     },
     "settings": {
         "import/resolver": {
