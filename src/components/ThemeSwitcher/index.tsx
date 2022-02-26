@@ -1,14 +1,18 @@
+import { FiMoon, FiSun } from 'react-icons/fi'
+
+import { Button } from './styles';
+
 interface ThemeSwitcherProps {
     toggleTheme: () => void;
+    theme: string;
 }
 
-export function ThemeSwitcher({ toggleTheme }: ThemeSwitcherProps) {
+export function ThemeSwitcher({ toggleTheme, theme }: ThemeSwitcherProps) {
     return (
         <>
-            <h1>Clique neste botão para alterar o tema da aplicação</h1>
-            <button type="button" onClick={toggleTheme}>
-                Alterar
-            </button>
+            <Button type="button" onClick={toggleTheme}>
+                {theme === 'dark' ? <FiMoon size="100" /> : <FiSun size="100" />}
+            </Button>
         </>
     );
 }
