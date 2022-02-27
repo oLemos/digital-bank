@@ -1,0 +1,34 @@
+import { createContext, ReactNode, useState } from 'react';
+import { DefaultTheme } from 'styled-components';
+
+import { darkTheme } from '../styles/themes/dark';
+import { lightTheme } from '../styles/themes/light';
+
+interface ToggleThemeProviderProps {
+    children: ReactNode;
+}
+
+interface ToggleThemeData {
+    currentTheme: DefaultTheme;
+    toggleTheme: () => void;
+}
+
+export const ToggleThemeContext = createContext<ToggleThemeData>({} as ToggleThemeData);
+
+export function ToggleThemeProvider({ children }: ToggleThemeProviderProps) {
+    const [currentTheme, setCurrentTheme] = useState<DefaultTheme>(lightTheme);
+
+    function toggleTheme() {
+        if (currentTheme.title === 'dark') {
+            setCurrentTheme(lightTheme)
+        } else {
+            setCurrentTheme(darkTheme)
+        }
+    }
+
+    return (
+        <ToggleThemeContext.Provider value={{ currentTheme, toggleTheme }}>
+            {children}
+        </ToggleThemeContext.Provider>
+    );
+}

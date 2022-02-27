@@ -1,17 +1,26 @@
 import { ThemeProvider } from 'styled-components';
+import { ToggleThemeProvider } from './contexts/ToggleThemeContext';
+import { useThemeContext } from './hooks/ThemeHook';
 
 import AppRoutes from './routes';
 
 import GlobalStyle from './styles/global';
-import { lightTheme } from './styles/themes/light';
 
-function App() {
+const Application = () => {
+    const { currentTheme } = useThemeContext();
+
     return (
-        <ThemeProvider theme={lightTheme}>
+        <ThemeProvider theme={currentTheme}>
             <AppRoutes />
             <GlobalStyle />
         </ThemeProvider>
     );
 }
 
-export default App;
+export default function App() {
+    return (
+        <ToggleThemeProvider>
+            <Application />
+        </ToggleThemeProvider>
+    );
+}
