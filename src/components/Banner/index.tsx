@@ -45,7 +45,7 @@ export function Banner({ toggleTheme, theme }: BannerProps) {
                             </li>
                             <li>
                                 <p><FaGithub /> Github:</p>
-                                <a target="_blank" href="https://github.com/oLemos/digital-bank">Back-end</a>
+                                <a target="_blank" href="https://github.com/oLemos/back-end">Back-end</a>
                             </li>
                         </ul>
                     </div>
