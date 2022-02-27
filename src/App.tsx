@@ -1,12 +1,12 @@
 import { ThemeProvider } from 'styled-components';
-import { ToggleThemeProvider } from './contexts/ToggleThemeContext';
-import { useThemeContext } from './hooks/ThemeHook';
+import { ThemeProvider as AppThemeProvider } from './contexts/ThemeContext';
+import { useThemeContext } from './hooks/useTheme';
 
 import AppRoutes from './routes';
 
 import GlobalStyle from './styles/global';
 
-const Application = () => {
+function Application() {
     const { currentTheme } = useThemeContext();
 
     return (
@@ -19,8 +19,8 @@ const Application = () => {
 
 export default function App() {
     return (
-        <ToggleThemeProvider>
+        <AppThemeProvider>
             <Application />
-        </ToggleThemeProvider>
+        </AppThemeProvider>
     );
 }

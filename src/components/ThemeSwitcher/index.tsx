@@ -1,5 +1,5 @@
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { useThemeContext } from '../../hooks/ThemeHook';
+import { useThemeContext } from '../../hooks/useTheme';
 
 import { Button } from './styles';
 
