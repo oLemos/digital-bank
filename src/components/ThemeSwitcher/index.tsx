@@ -1,10 +1,10 @@
-import { FiMoon, FiSun } from 'react-icons/fi'
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 import { Button } from './styles';
 
 interface ThemeSwitcherProps {
-    toggleTheme: () => void;
-    theme: string;
+    toggleTheme?: () => void;
+    theme?: string;
 }
 
 export function ThemeSwitcher({ toggleTheme, theme }: ThemeSwitcherProps) {

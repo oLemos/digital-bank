@@ -5,8 +5,8 @@ import { ThemeSwitcher } from "../ThemeSwitcher";
 import { Container } from "./styles";
 
 interface BannerProps {
-    toggleTheme: () => void;
-    theme: string;
+    toggleTheme?: () => void;
+    theme?: string;
 }
 
 export function Banner({ toggleTheme, theme }: BannerProps) {
